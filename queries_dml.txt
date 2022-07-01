@@ -1,0 +1,51 @@
+1
+SELECT * FROM `player`
+
+2
+SELECT * FROM `team` ORDER BY points DESC, nrr DESC
+
+3
+INSERT INTO `player` (`first_name`, `last_name`, `matches_played`, `strike_rate`, `runs_scored`, `wickets_taken`, `economy`, `contract_amount`, `dob`, `nationality`) VALUES ('$first_name', '$last_name', '$matches_played', '$strike_rate', '$runs_scored', '$wickets_taken', '$economy', '$contract_amount', '$dob', '$nationality');"
+select max(player_id) as last from player;
+INSERT INTO `player_roles` (`player_id`, `role`) VALUES ('$latest_id', 'bat');
+INSERT INTO `player_roles` (`player_id`, `role`) VALUES ('$latest_id', 'bowl');
+INSERT INTO `player_roles` (`player_id`, `role`) VALUES ('$latest_id', 'wk');
+
+4
+SELECT * FROM `coach` WHERE `coach`.`coach_id` = $coach_id
+DELETE FROM `coach` WHERE `coach`.`coach_id` = $coach_id
+
+5
+SELECT * FROM team WHERE `team`.`team_name` = '$old_name'
+UPDATE `team` SET `team_name` = '$new_name' WHERE `team`.`team_name` = '$old_name'
+
+6
+INSERT INTO `plays_for` (`player_id`, `team_name`, `jersey_no`) VALUES ('$player_id', '$team_name', '$jersey_no')"
+
+7
+SELECT * FROM coach INNER JOIN team ON coach.team_name=team.team_name WHERE team.team_name='$team_name';
+
+8
+SELECT * FROM company ORDER BY budget DESC;
+
+9
+SELECT player.player_id, first_name, last_name, nationality FROM player INNER JOIN player_roles ON player.player_id=player_roles.player_id WHERE player_roles.role='bat' AND player.player_id IN (SELECT player.player_id FROM player INNER JOIN player_roles ON player.player_id=player_roles.player_id WHERE player_roles.role='bowl');
+
+10
+SELECT * FROM player INNER JOIN player_roles ON player.player_id=player_roles.player_id WHERE player_roles.role='wk' AND player.dob > '1990-12-31';
+
+11
+SELECT * FROM sponsor WHERE sponsor_amount >= '20000000';
+
+12
+SELECT * FROM player WHERE player.last_name LIKE '$prefix%';
+
+13
+SELECT * FROM company WHERE budget = (SELECT max(budget) FROM company WHERE budget < (SELECT max(budget) FROM company));
+
+14
+SELECT player_id, first_name, last_name, dob, TIMESTAMPDIFF(YEAR, dob, CURDATE()) AS age FROM player WHERE player_id IN (SELECT plays_for.player_id FROM plays_for WHERE plays_for.team_name='$team_name');
+
+15
+SELECT * FROM `player` WHERE `player`.`player_id` = $player_id;
+DELETE FROM `player` WHERE `player`.`player_id` = $player_id;

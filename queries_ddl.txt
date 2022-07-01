@@ -1,0 +1,112 @@
+CREATE DATABASE cricket_league;
+
+CREATE TABLE `cricket_league`.`team` ( `team_name` VARCHAR(20) NULL , `games_won` INT(18) NOT NULL , `games_lost` INT(18) NOT NULL , `points` INT(40) NOT NULL , `nrr` FLOAT(5) NOT NULL , PRIMARY KEY (`team_name`(15))) ENGINE = InnoDB;
+
+
+INSERT INTO `team` (`team_name`, `games_won`, `games_lost`, `points`, `nrr`) VALUES ('delhi', '10', '4', '20', '0.481');
+INSERT INTO `team` (`team_name`, `games_won`, `games_lost`, `points`, `nrr`) VALUES ('chennai', '9', '5', '18', '0.455');
+INSERT INTO `team` (`team_name`, `games_won`, `games_lost`, `points`, `nrr`) VALUES ('bangalore', '9', '5', '14', '-0.140');
+INSERT INTO `team` (`team_name`, `games_won`, `games_lost`, `points`, `nrr`) VALUES ('kolkata', '7', '7', '14', '0.587');
+INSERT INTO `team` (`team_name`, `games_won`, `games_lost`, `points`, `nrr`) VALUES ('mumbai', '7', '7', '14', '0.116');
+INSERT INTO `team` (`team_name`, `games_won`, `games_lost`, `points`, `nrr`) VALUES ('punjab', '6', '8', '12', '-0.001');
+INSERT INTO `team` (`team_name`, `games_won`, `games_lost`, `points`, `nrr`) VALUES ('rajasthan', '5', '9', '10', '-0.993');
+INSERT INTO `team` (`team_name`, `games_won`, `games_lost`, `points`, `nrr`) VALUES ('hyderabad', '3', '11', '6', '-0.545');
+
+
+CREATE TABLE `cricket_league`.`player` ( `player_id` INT NOT NULL AUTO_INCREMENT , `first_name` VARCHAR(20) NOT NULL , `last_name` VARCHAR(20) NULL DEFAULT NULL , `matches_played` INT NOT NULL DEFAULT '0' , `strike_rate` FLOAT NOT NULL DEFAULT '0' , `runs_scored` INT NOT NULL DEFAULT '0' , `wickets_taken` INT NOT NULL DEFAULT '0' , `economy` FLOAT NOT NULL DEFAULT '0' , `contract_amount` INT NOT NULL , `dob` DATE NOT NULL , `nationality` VARCHAR(30) NOT NULL , PRIMARY KEY (`player_id`)) ENGINE = InnoDB;
+
+
+INSERT INTO `player` (`player_id`, `first_name`, `last_name`, `matches_played`, `strike_rate`, `runs_scored`, `wickets_taken`, `economy`, `contract_amount`, `dob`, `nationality`) VALUES (NULL, 'ms', 'dhoni', '150', '135.50', '5050', '5', '9.5', '150000000', '1981-07-07', 'ind');
+INSERT INTO `player` (`player_id`, `first_name`, `last_name`, `matches_played`, `strike_rate`, `runs_scored`, `wickets_taken`, `economy`, `contract_amount`, `dob`, `nationality`) VALUES (NULL, 'virat', 'kohli', '135', '132.07', '6100', '10', '11.25', '160000000', '1988-11-05', 'ind');
+INSERT INTO `player` (`player_id`, `first_name`, `last_name`, `matches_played`, `strike_rate`, `runs_scored`, `wickets_taken`, `economy`, `contract_amount`, `dob`, `nationality`) VALUES (NULL, 'chris', 'gayle', '120', '165.05', '5600', '55', '8.75', '120000000', '1979-09-21', 'wi');
+INSERT INTO `player` (`player_id`, `first_name`, `last_name`, `matches_played`, `strike_rate`, `runs_scored`, `wickets_taken`, `economy`, `contract_amount`, `dob`, `nationality`) VALUES (NULL, 'suresh', 'raina', '160', '129.25', '6200', '110', '7.55', '100000000', '1986-11-27', 'ind');
+INSERT INTO `player` (`player_id`, `first_name`, `last_name`, `matches_played`, `strike_rate`, `runs_scored`, `wickets_taken`, `economy`, `contract_amount`, `dob`, `nationality`) VALUES (NULL, 'mitchell', 'starc', '90', '105.10', '500', '220', '7.18', '110000000', '1990-01-30', 'aus');
+INSERT INTO `player` (`player_id`, `first_name`, `last_name`, `matches_played`, `strike_rate`, `runs_scored`, `wickets_taken`, `economy`, `contract_amount`, `dob`, `nationality`) VALUES (NULL, 'harbhajan', 'singh', '125', '125.20', '2400', '248', '7.95', '85000000', '1980-07-30', 'ind');
+INSERT INTO `player` (`player_id`, `first_name`, `last_name`, `matches_played`, `strike_rate`, `runs_scored`, `wickets_taken`, `economy`, `contract_amount`, `dob`, `nationality`) VALUES (NULL, 'kane', 'williamson', '75', '128.70', '3100', '0', '0', '120000000', '1990-08-08', 'nz');
+INSERT INTO `player` (`player_id`, `first_name`, `last_name`, `matches_played`, `strike_rate`, `runs_scored`, `wickets_taken`, `economy`, `contract_amount`, `dob`, `nationality`) VALUES (NULL, 'rohit', 'sharma', '128', '141.08', '5890', '10', '8.15', '160000000', '1987-04-30', 'ind');
+INSERT INTO `player` (`player_id`, `first_name`, `last_name`, `matches_played`, `strike_rate`, `runs_scored`, `wickets_taken`, `economy`, `contract_amount`, `dob`, `nationality`) VALUES (NULL, 'ravindra', 'jadeja', '95', '130.25', '2920', '195', '7.82', '120000000', '1988-12-06', 'ind');
+INSERT INTO `player` (`player_id`, `first_name`, `last_name`, `matches_played`, `strike_rate`, `runs_scored`, `wickets_taken`, `economy`, `contract_amount`, `dob`, `nationality`) VALUES (NULL, 'ishant', 'sharma', '100', '85.50', '500', '200', '7.05', '90000000', '1988-09-02', 'ind');
+INSERT INTO `player` (`player_id`, `first_name`, `last_name`, `matches_played`, `strike_rate`, `runs_scored`, `wickets_taken`, `economy`, `contract_amount`, `dob`, `nationality`) VALUES (NULL, 'ross', 'taylor', '82', '130.15', '2400', '0', '0', '60000000', '1984-03-08', 'nz');
+INSERT INTO `player` (`player_id`, `first_name`, `last_name`, `matches_played`, `strike_rate`, `runs_scored`, `wickets_taken`, `economy`, `contract_amount`, `dob`, `nationality`) VALUES (NULL, 'rishabh', 'pant', '50', '142.75', '2000', '0', '0', '140000000', '1997-10-04', 'ind');
+INSERT INTO `player` (`player_id`, `first_name`, `last_name`, `matches_played`, `strike_rate`, `runs_scored`, `wickets_taken`, `economy`, `contract_amount`, `dob`, `nationality`) VALUES (NULL, 'yuvraj', 'singh', '110', '141.15', '5510', '100', '8.45', '120000000', '1981-12-12', 'ind');
+INSERT INTO `player` (`player_id`, `first_name`, `last_name`, `matches_played`, `strike_rate`, `runs_scored`, `wickets_taken`, `economy`, `contract_amount`, `dob`, `nationality`) VALUES (NULL, 'tim', 'southee', '50', '110', '600', '115', '7.20', '80000000', '1988-12-11', 'nz');
+INSERT INTO `player` (`player_id`, `first_name`, `last_name`, `matches_played`, `strike_rate`, `runs_scored`, `wickets_taken`, `economy`, `contract_amount`, `dob`, `nationality`) VALUES (NULL, 'jason', 'roy', '15', '128.10', '580', '0', '0', '110000000', '1990-07-21', 'eng');
+INSERT INTO `player` (`player_id`, `first_name`, `last_name`, `matches_played`, `strike_rate`, `runs_scored`, `wickets_taken`, `economy`, `contract_amount`, `dob`, `nationality`) VALUES (NULL, 'ishan', 'kishan', '30', '139.20', '1250', '0', '0', '130000000', '1998-07-18', 'ind');
+INSERT INTO `player` (`player_id`, `first_name`, `last_name`, `matches_played`, `strike_rate`, `runs_scored`, `wickets_taken`, `economy`, `contract_amount`, `dob`, `nationality`) VALUES (NULL, 'kl', 'rahul', '80', '136.75', '4100', '5', '10.50', '150000000', '1992-04-18', 'ind');
+INSERT INTO `player` (`player_id`, `first_name`, `last_name`, `matches_played`, `strike_rate`, `runs_scored`, `wickets_taken`, `economy`, `contract_amount`, `dob`, `nationality`) VALUES (NULL, 'shakib', 'hassan', '95', '127.10', '3700', '170', '8.25', '95000000', '1987-03-24', 'ban');
+
+
+CREATE TABLE `cricket_league`.`log` ( `sno` INT NOT NULL AUTO_INCREMENT , `player_id` INT NOT NULL , `action` VARCHAR(30) NOT NULL , `event_date` DATETIME NOT NULL , PRIMARY KEY (`sno`)) ENGINE = InnoDB;
+CREATE TRIGGER `insert_log` AFTER INSERT ON `player` FOR EACH ROW INSERT INTO log VALUES(null, NEW.player_id, 'Inserted', NOW());
+CREATE TRIGGER `update_log` AFTER UPDATe ON `player` FOR EACH ROW INSERT INTO log VALUES(null, OLD.player_id, 'deleted', NOW());
+CREATE TRIGGER `delete_log` BEFORE DELETE ON `player` FOR EACH ROW INSERT INTO log VALUES(null, OLD.player_id, 'deleted', NOW());
+
+INSERT INTO `player` (`player_id`, `first_name`, `last_name`, `matches_played`, `strike_rate`, `runs_scored`, `wickets_taken`, `economy`, `contract_amount`, `dob`, `nationality`) VALUES (NULL, 'david', 'warner', '105', '134.20', '4300', '0', '0', '125000000', '1987-03-24', 'aus');
+INSERT INTO `player` (`player_id`, `first_name`, `last_name`, `matches_played`, `strike_rate`, `runs_scored`, `wickets_taken`, `economy`, `contract_amount`, `dob`, `nationality`) VALUES (NULL, 'rashid', 'khan', '45', '129.80', '1100', '101', '7.30', '130000000', '1998-09-20', 'afg');
+INSERT INTO `player` (`player_id`, `first_name`, `last_name`, `matches_played`, `strike_rate`, `runs_scored`, `wickets_taken`, `economy`, `contract_amount`, `dob`, `nationality`) VALUES (NULL, 'mohd', 'nabi', '32', '125.70', '810', '52', '8.10', '70000000', '1985-01-01', 'afg');
+UPDATE `player` SET `matches_played` = '35' WHERE `player`.`player_id` = 23;
+INSERT INTO `player` (`player_id`, `first_name`, `last_name`, `matches_played`, `strike_rate`, `runs_scored`, `wickets_taken`, `economy`, `contract_amount`, `dob`, `nationality`) VALUES (NULL, 'dwayne', 'bravo', '115', '138.25', '3950', '230', '7.95', '110000000', '1983-10-07', 'wi');
+INSERT INTO `player` (`player_id`, `first_name`, `last_name`, `matches_played`, `strike_rate`, `runs_scored`, `wickets_taken`, `economy`, `contract_amount`, `dob`, `nationality`) VALUES (NULL, 'umesh', 'yadav', '70', '110', '700', '138', '8.20', '50000000', '1987-10-25', 'ind');
+DELETE FROM `player` WHERE `player`.`player_id` = 25
+
+
+CREATE TABLE `cricket_league`.`player_roles` ( `player_id` INT NOT NULL , `role` VARCHAR(10) NOT NULL , PRIMARY KEY (`player_id`, `role`)) ENGINE = InnoDB;
+INSERT INTO `player_roles` (`player_id`, `role`) VALUES ('1', 'bat');
+INSERT INTO `player_roles` (`player_id`, `role`) VALUES ('1', 'wk');
+INSERT INTO `player_roles` (`player_id`, `role`) VALUES ('2', 'bat');
+INSERT INTO `player_roles` (`player_id`, `role`) VALUES ('3', 'bat'), ('3', 'bowl');
+INSERT INTO `player_roles` (`player_id`, `role`) VALUES ('4', 'bat'), ('4', 'bowl');
+INSERT INTO `player_roles` (`player_id`, `role`) VALUES ('5', 'bowl');
+INSERT INTO `player_roles` (`player_id`, `role`) VALUES ('6', 'bat'), ('6', 'bowl');
+
+ALTER TABLE `player_roles` ADD FOREIGN KEY (`player_id`) REFERENCES `player`(`player_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+INSERT INTO `player_roles` (`player_id`, `role`) VALUES ('8', 'bat');
+INSERT INTO `player_roles` (`player_id`, `role`) VALUES ('9', 'bat'), ('9', 'bowl'), ('10', 'bowl'), ('11', 'bat');
+INSERT INTO `player_roles` (`player_id`, `role`) VALUES ('12', 'wk'), ('12', 'bat');
+INSERT INTO `player_roles` (`player_id`, `role`) VALUES ('13', 'bat'), ('13', 'bowl');
+INSERT INTO `player_roles` (`player_id`, `role`) VALUES ('14', 'bowl'), ('15', 'bat');
+INSERT INTO `player_roles` (`player_id`, `role`) VALUES ('16', 'wk'), ('16', 'bat');
+INSERT INTO `player_roles` (`player_id`, `role`) VALUES ('17', 'wk'), ('17', 'bat');
+INSERT INTO `player_roles` (`player_id`, `role`) VALUES ('18', 'bat'), ('18', 'bowl');
+INSERT INTO `player_roles` (`player_id`, `role`) VALUES ('21', 'bat');
+INSERT INTO `player_roles` (`player_id`, `role`) VALUES ('22', 'bat'), ('22', 'bowl');
+INSERT INTO `player_roles` (`player_id`, `role`) VALUES ('23', 'bat'), ('23', 'bowl');
+INSERT INTO `player_roles` (`player_id`, `role`) VALUES ('24', 'bat'), ('24', 'bowl'), ('26', 'bat');
+
+
+CREATE TABLE `cricket_league`.`coach` ( `coach_id` INT NOT NULL AUTO_INCREMENT , `coach_team` VARCHAR(20) NOT NULL , `first_name` VARCHAR(20) NOT NULL , `last_name` VARCHAR(20) NULL DEFAULT NULL , `experience` INT NOT NULL , `salary` INT NOT NULL , `nationality` VARCHAR(10) NOT NULL , PRIMARY KEY (`coach_id`)) ENGINE = InnoDB;
+INSERT INTO `coach` (`coach_id`, `team_name`, `first_name`, `last_name`, `experience`, `salary`, `nationality`) VALUES (NULL, 'hyderabad', 'trevor', 'bayliss', '3', '70000000', 'aus');
+INSERT INTO `coach` (`coach_id`, `team_name`, `first_name`, `last_name`, `experience`, `salary`, `nationality`) VALUES (NULL, 'kolkata', 'anil', 'kumble', '12', '110000000', 'ind');
+INSERT INTO `coach` (`coach_id`, `team_name`, `first_name`, `last_name`, `experience`, `salary`, `nationality`) VALUES (NULL, 'mumbai', 'mahela', 'jayawardene', '6', '50000000', 'sl'), (NULL, 'mumbai', 'shane', 'warne', '8', '100000000', 'aus');
+INSERT INTO `coach` (`coach_id`, `team_name`, `first_name`, `last_name`, `experience`, `salary`, `nationality`) VALUES (NULL, 'chennai', 'stephen', 'fleming', '10', '100000000', 'nz');
+INSERT INTO `coach` (`coach_id`, `team_name`, `first_name`, `last_name`, `experience`, `salary`, `nationality`) VALUES (NULL, 'punjab', 'gary', 'kirsten', '11', '100000000', 'sa');
+
+
+
+
+CREATE TABLE `cricket_league`.`organisation` ( `registration_id` INT NOT NULL AUTO_INCREMENT , `team_name` VARCHAR(20) NOT NULL , PRIMARY KEY (`registration_id`)) ENGINE = InnoDB;
+CREATE TABLE `cricket_league`.`company` ( `registration_id` INT NOT NULL , `company_name` VARCHAR(30) NOT NULL , `budget` INT NOT NULL , PRIMARY KEY (`registration_id`)) ENGINE = InnoDB;
+ALTER TABLE `company` ADD FOREIGN KEY (`registration_id`) REFERENCES `organisation`(`registration_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+CREATE TABLE `cricket_league`.`sponsor` ( `registration_id` INT NOT NULL , `sponsor_name` VARCHAR(30) NOT NULL , `sponsor_amount` INT NOT NULL , PRIMARY KEY (`registration_id`)) ENGINE = InnoDB;
+ALTER TABLE `sponsor` ADD FOREIGN KEY (`registration_id`) REFERENCES `organisation`(`registration_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+CREATE TABLE `cricket_league`.`company_board` ( `registration_id` INT NOT NULL , `board_member` VARCHAR(20) NOT NULL , PRIMARY KEY (`registration_id`, `board_member`)) ENGINE = InnoDB;
+ALTER TABLE `company_board` ADD FOREIGN KEY (`registration_id`) REFERENCES `company`(`registration_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+CREATE TABLE `cricket_league`.`plays_for` ( `player_id` INT NOT NULL , `team_name` VARCHAR(20) NOT NULL , `jersey_no` INT NOT NULL , PRIMARY KEY (`player_id`), UNIQUE (`team_name`, `jersey_no`)) ENGINE = InnoDB;
+ALTER TABLE `plays_for` ADD FOREIGN KEY (`player_id`) REFERENCES `player`(`player_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `coach` ADD FOREIGN KEY (`team_name`) REFERENCES `team`(`team_name`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `organisation` ADD FOREIGN KEY (`team_name`) REFERENCES `team`(`team_name`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `plays_for` ADD FOREIGN KEY (`team_name`) REFERENCES `team`(`team_name`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE `coach` ADD `role` VARCHAR(20) NOT NULL AFTER `experience`;
+INSERT INTO `organisation` (`registration_id`, `team_name`) VALUES (NULL, 'bangalore'), (NULL, 'chennai');
+INSERT INTO `organisation` (`registration_id`, `team_name`) VALUES (NULL, 'delhi'), (NULL, 'hyderabad'), (NULL, 'kolkata'), (NULL, 'mumbai');
+INSERT INTO `organisation` (`registration_id`, `team_name`) VALUES (NULL, 'punjab'), (NULL, 'rajasthan'), (NULL, 'chennai'), (NULL, 'mumbai'), (NULL, 'punjab');
+INSERT INTO `organisation` (`registration_id`, `team_name`) VALUES (NULL, 'bangalore'), (NULL, 'rajasthan'), (NULL, 'hyderabad'), (NULL, 'mumbai'), (NULL, 'chennai');
+INSERT INTO `organisation` (`registration_id`, `team_name`) VALUES (NULL, 'delhi'), (NULL, 'delhi');
+
+INSERT INTO `company` (`registration_id`, `company_name`, `budget`) VALUES ('1', 'trident', '600000000');
+INSERT INTO `sponsor` (`registration_id`, `sponsor_name`, `sponsor_amount`) VALUES ('12', 'mrf', '20000000');
+
+ALTER TABLE `cricket_league`.`plays_for` ADD UNIQUE (`team_name`, `jersey_no`);
+
+

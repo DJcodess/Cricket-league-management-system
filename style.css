@@ -1,0 +1,44 @@
+
+
+img {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+}
+
+button a {
+  text-decoration: inherit;
+  display: block;
+  color: inherit;
+}
+
+.home-btn {
+  position: fixed;
+  top: 5%;
+  left: 5%;
+}
+
+.main-container {
+  padding-top: 1rem;
+  text-align: center;
+  width: 70%;
+  margin: auto;
+  background-color: whitesmoke;
+}
+
+.main-container h6 {
+  text-align: left;
+  padding-left: 5rem;
+  padding-top: 0.3rem;
+}
+
+table {
+  margin: auto;
+  width: 90%;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
